@@ -8,30 +8,30 @@ Output also makes use of perfdata where appropriate.
 
 ## Example Usage
 
-	[dwalker@dan01 ~]$ python check_viprinet.py -H 10.0.0.1 -c public -t fan 
+	[dwalker@dan01 ~]$ python check_viprinet_hub.py -H 10.0.0.1 -c public -t fan 
 	OK: No fan faults detected |fan1_speed=2592 fan2_speed=2580 
 	
-	[dwalker@dan01 ~]$ python check_viprinet.py -H 10.0.0.1 -c public -t tunnels
+	[dwalker@dan01 ~]$ python check_viprinet_hub.py -H 10.0.0.1 -c public -t tunnels
 	OK: Tunnels: 118 |tunnels=118
 	
-	[dwalker@dan01 ~]$ python check_viprinet.py -H 10.0.0.1 -c public -t tunnels -m 10 -M 100
+	[dwalker@dan01 ~]$ python check_viprinet_hub.py -H 10.0.0.1 -c public -t tunnels -m 10 -M 100
 	CRITICAL: Tunnels: 118 |tunnels=118
 	
-	[dwalker@dan01 ~]$ python check_viprinet.py -H 10.0.0.1 -c public -t temperature         
+	[dwalker@dan01 ~]$ python check_viprinet_hub.py -H 10.0.0.1 -c public -t temperature         
 	OK: Temperature: 27C|temperature=27
 	
-	[dwalker@dan01 ~]$ python check_viprinet.py -H 10.0.0.1 -c public -t cpu        
+	[dwalker@dan01 ~]$ python check_viprinet_hub.py -H 10.0.0.1 -c public -t cpu        
 	OK: Average CPU Load: 26%|cpu_load_average=26
 	
 ## Arguments
 
 	-H --hostname 			Address of the Viprinet Hub to check
 	-c --community			SNMP community (v2c)
-	-t --type				Type of check (serial/tunnels/cpu/memory/temperature/power/fans)
-	-m --min				Minimum (used by tunnels and fan RPM)
-	-M --max				Maximum (used by tunnels, cpu, memory, temperature)
-	-s --serial				Required if checking type 'serial' (simple check for failover)
-	-D 						Debug mode
+	-t --type			Type of check (serial/tunnels/cpu/memory/temperature/power/fans)
+	-m --min			Minimum (used by tunnels and fan RPM)
+	-M --max			Maximum (used by tunnels, cpu, memory, temperature)
+	-s --serial			Required if checking type 'serial' (simple check for failover)
+	-D 				Debug mode
 	-T --timeout			Timeout passed to snmpwalk
 
 ## Issues and Requests
